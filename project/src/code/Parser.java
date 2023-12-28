@@ -30,10 +30,11 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\014\000\002\002\004\000\002\002\007\000\002\002" +
+    "\000\017\000\002\002\004\000\002\002\007\000\002\002" +
     "\011\000\002\003\003\000\002\003\003\000\002\003\003" +
-    "\000\002\004\005\000\002\004\003\000\002\005\005\000" +
-    "\002\005\005\000\002\005\005\000\002\005\007" });
+    "\000\002\004\005\000\002\004\003\000\002\004\004\000" +
+    "\002\005\005\000\002\005\005\000\002\005\005\000\002" +
+    "\005\005\000\002\005\005\000\002\005\007" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -41,22 +42,25 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\033\000\010\004\005\005\010\006\004\001\002\000" +
+    "\000\040\000\010\004\005\005\010\006\004\001\002\000" +
     "\004\010\ufffc\001\002\000\004\010\ufffe\001\002\000\004" +
-    "\002\035\001\002\000\004\010\011\001\002\000\004\010" +
-    "\ufffd\001\002\000\014\004\ufffa\005\ufffa\006\ufffa\007\033" +
-    "\013\ufffa\001\002\000\010\004\005\005\010\006\004\001" +
-    "\002\000\004\010\014\001\002\000\012\004\005\005\010" +
-    "\006\004\012\015\001\002\000\004\002\000\001\002\000" +
-    "\004\010\017\001\002\000\010\014\024\015\023\016\022" +
-    "\001\002\000\004\012\021\001\002\000\004\002\uffff\001" +
-    "\002\000\006\011\027\013\030\001\002\000\004\011\026" +
-    "\001\002\000\004\011\025\001\002\000\004\012\ufff9\001" +
-    "\002\000\004\012\ufff8\001\002\000\004\012\ufff7\001\002" +
-    "\000\004\010\011\001\002\000\004\013\032\001\002\000" +
-    "\004\012\ufff6\001\002\000\004\010\011\001\002\000\012" +
-    "\004\ufffb\005\ufffb\006\ufffb\013\ufffb\001\002\000\004\002" +
-    "\001\001\002" });
+    "\002\042\001\002\000\004\010\011\001\002\000\004\010" +
+    "\ufffd\001\002\000\016\004\ufffa\005\ufffa\006\ufffa\007\037" +
+    "\010\011\013\ufffa\001\002\000\010\004\005\005\010\006" +
+    "\004\001\002\000\004\010\014\001\002\000\012\004\005" +
+    "\005\010\006\004\012\015\001\002\000\004\002\000\001" +
+    "\002\000\004\010\017\001\002\000\014\014\024\015\026" +
+    "\016\023\017\025\020\022\001\002\000\004\012\021\001" +
+    "\002\000\004\002\uffff\001\002\000\006\011\033\013\034" +
+    "\001\002\000\004\011\032\001\002\000\004\011\031\001" +
+    "\002\000\004\011\030\001\002\000\004\011\027\001\002" +
+    "\000\004\012\ufff5\001\002\000\004\012\ufff4\001\002\000" +
+    "\004\012\ufff8\001\002\000\004\012\ufff7\001\002\000\004" +
+    "\012\ufff6\001\002\000\004\010\011\001\002\000\004\013" +
+    "\036\001\002\000\004\012\ufff3\001\002\000\004\010\011" +
+    "\001\002\000\012\004\ufff9\005\ufff9\006\ufff9\013\ufff9\001" +
+    "\002\000\012\004\ufffb\005\ufffb\006\ufffb\013\ufffb\001\002" +
+    "\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -64,16 +68,18 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\033\000\006\002\005\003\006\001\001\000\002\001" +
+    "\000\040\000\006\002\005\003\006\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\004\004\011" +
-    "\001\001\000\002\001\001\000\002\001\001\000\004\003" +
-    "\012\001\001\000\002\001\001\000\004\003\015\001\001" +
-    "\000\002\001\001\000\004\005\017\001\001\000\002\001" +
+    "\001\001\000\002\001\001\000\004\004\037\001\001\000" +
+    "\004\003\012\001\001\000\002\001\001\000\004\003\015" +
+    "\001\001\000\002\001\001\000\004\005\017\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\004\004\030\001\001" +
-    "\000\002\001\001\000\002\001\001\000\004\004\033\001" +
-    "\001\000\002\001\001\000\002\001\001" });
+    "\004\004\034\001\001\000\002\001\001\000\002\001\001" +
+    "\000\004\004\040\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -213,7 +219,16 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // condicion ::= CAMPO MAYOR NUMERO 
+          case 8: // lista_campos ::= CAMPO lista_campos 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("lista_campos",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 9: // condicion ::= CAMPO MAYOR NUMERO 
             {
               Object RESULT =null;
 
@@ -222,7 +237,7 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // condicion ::= CAMPO MENOR NUMERO 
+          case 10: // condicion ::= CAMPO MENOR NUMERO 
             {
               Object RESULT =null;
 
@@ -231,7 +246,7 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // condicion ::= CAMPO IGUAL NUMERO 
+          case 11: // condicion ::= CAMPO IGUAL NUMERO 
             {
               Object RESULT =null;
 
@@ -240,7 +255,25 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // condicion ::= CAMPO IGUAL COMILLA lista_campos COMILLA 
+          case 12: // condicion ::= CAMPO MAYOR_IGUAL NUMERO 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("condicion",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 13: // condicion ::= CAMPO MENOR_IGUAL NUMERO 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("condicion",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 14: // condicion ::= CAMPO IGUAL COMILLA lista_campos COMILLA 
             {
               Object RESULT =null;
 

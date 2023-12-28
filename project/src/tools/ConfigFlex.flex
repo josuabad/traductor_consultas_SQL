@@ -21,26 +21,26 @@ import java_cup.runtime.*;
 
 /* Algunas definiciones para nuestro lenguaje */
 espacios = \r | \n | \r\n | \t | \f
-campos = [A-Za-z]+
+campos = [A-Za-z_]+
 numeros = [0-9]+
 
 %%
 
 [Dd] [Ee] { 
             System.out.print("FROM");
-            nexo("FROM ");
+            nexo(" FROM ");
             return new Symbol(sym.FROM);
             }
 
 [Ee] [Ll] [Ee] [Gg] [Ii] [Rr] { 
             System.out.print("SELECT");
-            nexo("SELECT ");
+            nexo(" SELECT ");
             return new Symbol(sym.SELECT);
             }
 
 [Pp] [Aa] [Rr] [Aa] {
             System.out.print("WHERE");
-            nexo("WHERE ");
+            nexo(" WHERE ");
             return new Symbol(sym.WHERE);
             }
 
@@ -52,13 +52,13 @@ numeros = [0-9]+
 
 {campos} | "*" { 
             System.out.print(yytext());
-            nexo(yytext() + " ");
+            nexo(yytext());
             return new Symbol(sym.CAMPO);
             }
 
 {numeros} | "*" { 
             System.out.print(yytext());
-            nexo(yytext() + " ");
+            nexo(yytext());
             return new Symbol(sym.NUMERO);
             }
 
@@ -80,15 +80,27 @@ numeros = [0-9]+
             return new Symbol(sym.MAYOR);
             }
 
+">=" { 
+            System.out.print(">=");
+            nexo(">=");
+            return new Symbol(sym.MAYOR_IGUAL);
+            }
+
 "<" { 
             System.out.print("<");
             nexo("<");
             return new Symbol(sym.MENOR);
             }
 
+"<=" { 
+            System.out.print("<=");
+            nexo("<=");
+            return new Symbol(sym.MENOR_IGUAL);
+            }
+
 "=" { 
             System.out.print("=");
-            nexo("=");
+            nexo(" =");
             return new Symbol(sym.IGUAL);
             }
 

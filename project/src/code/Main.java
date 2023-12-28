@@ -137,7 +137,9 @@ public class Main extends JFrame {
 
             parser.parse();
 
-            connectSQL(Flex.texto.substring(4, Flex.texto.length()));
+            String query = Flex.texto.substring(4, Flex.texto.length());
+            query = query.trim();
+            connectSQL(query);
         } catch (Exception e) {
             areaOutput.setText("Error sintáctico: \n" + e.getMessage() + "\nPruebe con: \"Elegir * de libros;\"");
         }        

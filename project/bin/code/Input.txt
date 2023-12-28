@@ -1,1 +1,1 @@
-elegir titulo, paginas, autor de libros;
+elegir titulo, paginas de libros para autor = "Toni_Nadal";

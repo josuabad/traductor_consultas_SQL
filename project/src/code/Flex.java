@@ -68,10 +68,10 @@ class Flex implements java_cup.runtime.Scanner {
     "\7\0\1\7\1\0\1\10\2\0\1\11\12\12\1\0"+
     "\1\13\1\14\1\15\1\16\2\0\1\17\2\20\1\21"+
     "\1\22\1\20\1\23\1\20\1\24\2\20\1\25\3\20"+
-    "\1\26\1\20\1\27\10\20\6\0\1\17\2\20\1\21"+
-    "\1\22\1\20\1\23\1\20\1\24\2\20\1\25\3\20"+
-    "\1\26\1\20\1\27\10\20\12\0\1\3\u01a2\0\2\3"+
-    "\326\0\u0100\3";
+    "\1\26\1\20\1\27\10\20\4\0\1\20\1\0\1\17"+
+    "\2\20\1\21\1\22\1\20\1\23\1\20\1\24\2\20"+
+    "\1\25\3\20\1\26\1\20\1\27\10\20\12\0\1\3"+
+    "\u01a2\0\2\3\326\0\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -99,11 +99,11 @@ class Flex implements java_cup.runtime.Scanner {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\2\2\1\3\1\4\1\5\1\1\1\6"+
-    "\1\7\1\10\1\11\1\12\4\4\1\2\1\13\5\4"+
-    "\1\14\1\4\1\15";
+    "\1\7\1\10\1\11\1\12\4\4\1\2\1\13\1\14"+
+    "\1\15\5\4\1\16\1\4\1\17";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[27];
+    int [] result = new int[29];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -129,12 +129,12 @@ class Flex implements java_cup.runtime.Scanner {
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\30\0\30\0\60\0\30\0\30\0\30\0\110"+
-    "\0\140\0\30\0\30\0\30\0\30\0\170\0\220\0\250"+
-    "\0\300\0\330\0\170\0\360\0\u0108\0\u0120\0\u0138\0\u0150"+
-    "\0\170\0\u0168\0\170";
+    "\0\140\0\30\0\170\0\30\0\220\0\250\0\300\0\330"+
+    "\0\360\0\u0108\0\30\0\30\0\250\0\u0120\0\u0138\0\u0150"+
+    "\0\u0168\0\u0180\0\250\0\u0198\0\250";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[27];
+    int [] result = new int[29];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -160,14 +160,15 @@ class Flex implements java_cup.runtime.Scanner {
     "\1\2\2\3\1\0\1\3\1\4\1\5\1\6\1\7"+
     "\1\10\1\11\1\12\1\13\1\14\1\15\2\16\1\17"+
     "\1\20\3\16\1\21\1\16\32\0\1\3\36\0\1\22"+
-    "\30\0\1\11\34\0\11\16\17\0\3\16\1\23\5\16"+
-    "\17\0\6\16\1\24\2\16\17\0\1\25\10\16\2\22"+
-    "\4\0\22\22\17\0\3\16\1\26\5\16\17\0\10\16"+
-    "\1\27\17\0\4\16\1\30\4\16\17\0\1\31\10\16"+
-    "\17\0\5\16\1\32\3\16\17\0\10\16\1\33";
+    "\30\0\1\11\32\0\1\23\27\0\1\24\31\0\11\16"+
+    "\17\0\3\16\1\25\5\16\17\0\6\16\1\26\2\16"+
+    "\17\0\1\27\10\16\2\22\4\0\22\22\17\0\3\16"+
+    "\1\30\5\16\17\0\10\16\1\31\17\0\4\16\1\32"+
+    "\4\16\17\0\1\33\10\16\17\0\5\16\1\34\3\16"+
+    "\17\0\10\16\1\35";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[384];
+    int [] result = new int[432];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -210,10 +211,11 @@ class Flex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\1\1\3\11\2\1\4\11\16\1";
+    "\1\0\2\11\1\1\3\11\2\1\1\11\1\1\1\11"+
+    "\6\1\2\11\11\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[27];
+    int [] result = new int[29];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -670,89 +672,103 @@ class Flex implements java_cup.runtime.Scanner {
             { System.out.print(yytext());
             }
           // fall through
-          case 14: break;
+          case 16: break;
           case 2:
             { /*Ignore*/
             }
           // fall through
-          case 15: break;
+          case 17: break;
           case 3:
             { System.out.print("\"");
             nexo("\"");
             return new Symbol(sym.COMILLA);
             }
           // fall through
-          case 16: break;
+          case 18: break;
           case 4:
             { System.out.print(yytext());
-            nexo(yytext() + " ");
+            nexo(yytext());
             return new Symbol(sym.CAMPO);
             }
           // fall through
-          case 17: break;
+          case 19: break;
           case 5:
             { System.out.print(", ");
             nexo(", ");
             return new Symbol(sym.COMA);
             }
           // fall through
-          case 18: break;
+          case 20: break;
           case 6:
             { System.out.print(yytext());
-            nexo(yytext() + " ");
+            nexo(yytext());
             return new Symbol(sym.NUMERO);
             }
           // fall through
-          case 19: break;
+          case 21: break;
           case 7:
             { System.out.print(";");
             nexo("; ");
             return new Symbol(sym.PUNTO_COMA);
             }
           // fall through
-          case 20: break;
+          case 22: break;
           case 8:
             { System.out.print("<");
             nexo("<");
             return new Symbol(sym.MENOR);
             }
           // fall through
-          case 21: break;
+          case 23: break;
           case 9:
             { System.out.print("=");
-            nexo("=");
+            nexo(" =");
             return new Symbol(sym.IGUAL);
             }
           // fall through
-          case 22: break;
+          case 24: break;
           case 10:
             { System.out.print(">");
             nexo(">");
             return new Symbol(sym.MAYOR);
             }
           // fall through
-          case 23: break;
-          case 11:
-            { System.out.print("FROM");
-            nexo("FROM ");
-            return new Symbol(sym.FROM);
-            }
-          // fall through
-          case 24: break;
-          case 12:
-            { System.out.print("WHERE");
-            nexo("WHERE ");
-            return new Symbol(sym.WHERE);
-            }
-          // fall through
           case 25: break;
-          case 13:
-            { System.out.print("SELECT");
-            nexo("SELECT ");
-            return new Symbol(sym.SELECT);
+          case 11:
+            { System.out.print("<=");
+            nexo("<=");
+            return new Symbol(sym.MENOR_IGUAL);
             }
           // fall through
           case 26: break;
+          case 12:
+            { System.out.print(">=");
+            nexo(">=");
+            return new Symbol(sym.MAYOR_IGUAL);
+            }
+          // fall through
+          case 27: break;
+          case 13:
+            { System.out.print("FROM");
+            nexo(" FROM ");
+            return new Symbol(sym.FROM);
+            }
+          // fall through
+          case 28: break;
+          case 14:
+            { System.out.print("WHERE");
+            nexo(" WHERE ");
+            return new Symbol(sym.WHERE);
+            }
+          // fall through
+          case 29: break;
+          case 15:
+            { System.out.print("SELECT");
+            nexo(" SELECT ");
+            return new Symbol(sym.SELECT);
+            }
+          // fall through
+          case 30: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
