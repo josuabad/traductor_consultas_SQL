@@ -1,0 +1,2 @@
+java -jar "lib\jflex-full-1.9.1.jar" "src\code\ConfigFlex.flex"
+java -jar "lib\java-cup-11b.jar" -parser Parser -symbols sym "src\code\ConfigCup.cup"

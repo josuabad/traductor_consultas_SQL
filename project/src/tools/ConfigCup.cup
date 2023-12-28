@@ -1,0 +1,14 @@
+package code;
+
+/* Simbolos terminales y no terminales */
+terminal FROM, SELECT, CAMPO, COMA, PUNTO_COMA;
+non terminal query, reservadas, lista_campos;
+
+/* Reglas de derivacion */
+start with query;
+
+query ::= reservadas lista_campos reservadas lista_campos PUNTO_COMA;
+
+reservadas ::= FROM | SELECT;
+
+lista_campos ::= CAMPO COMA lista_campos | CAMPO;
