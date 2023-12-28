@@ -2,9 +2,6 @@ package code;
 
 /* Importamos la libreria de cup para el funcionamiento */
 import java_cup.runtime.*;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 
 %%
 

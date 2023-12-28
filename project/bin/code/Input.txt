@@ -1,1 +1,0 @@
-elegir titulo, autor, paginas de libros;

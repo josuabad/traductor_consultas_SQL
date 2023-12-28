@@ -1,8 +1,5 @@
 package code;
 
-/* Importamos la libreria de cup para el funcionamiento */
-import java_cup.runtime.*;
-
 /* Simbolos terminales y no terminales */
 terminal FROM, SELECT, CAMPO, COMA, PUNTO_COMA;
 non terminal query, reservadas, lista_campos;
