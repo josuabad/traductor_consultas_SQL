@@ -5,6 +5,8 @@
 
 package code;
 
+import java_cup.runtime.XMLElement;
+
 /** CUP v0.11b 20160615 (GIT 4ac7450) generated parser.
   */
 @SuppressWarnings({"rawtypes"})
@@ -28,9 +30,10 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\006\000\002\002\004\000\002\002\007\000\002\003" +
-    "\003\000\002\003\003\000\002\004\005\000\002\004\003" +
-    "" });
+    "\000\014\000\002\002\004\000\002\002\007\000\002\002" +
+    "\011\000\002\003\003\000\002\003\003\000\002\003\003" +
+    "\000\002\004\005\000\002\004\003\000\002\005\005\000" +
+    "\002\005\005\000\002\005\005\000\002\005\007" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -38,13 +41,21 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\015\000\006\004\004\005\007\001\002\000\004\006" +
-    "\uffff\001\002\000\004\002\017\001\002\000\004\006\010" +
-    "\001\002\000\004\006\ufffe\001\002\000\012\004\ufffc\005" +
-    "\ufffc\007\015\010\ufffc\001\002\000\006\004\004\005\007" +
-    "\001\002\000\004\006\010\001\002\000\004\010\014\001" +
-    "\002\000\004\002\000\001\002\000\004\006\010\001\002" +
-    "\000\010\004\ufffd\005\ufffd\010\ufffd\001\002\000\004\002" +
+    "\000\033\000\010\004\005\005\010\006\004\001\002\000" +
+    "\004\010\ufffc\001\002\000\004\010\ufffe\001\002\000\004" +
+    "\002\035\001\002\000\004\010\011\001\002\000\004\010" +
+    "\ufffd\001\002\000\014\004\ufffa\005\ufffa\006\ufffa\007\033" +
+    "\013\ufffa\001\002\000\010\004\005\005\010\006\004\001" +
+    "\002\000\004\010\014\001\002\000\012\004\005\005\010" +
+    "\006\004\012\015\001\002\000\004\002\000\001\002\000" +
+    "\004\010\017\001\002\000\010\014\024\015\023\016\022" +
+    "\001\002\000\004\012\021\001\002\000\004\002\uffff\001" +
+    "\002\000\006\011\027\013\030\001\002\000\004\011\026" +
+    "\001\002\000\004\011\025\001\002\000\004\012\ufff9\001" +
+    "\002\000\004\012\ufff8\001\002\000\004\012\ufff7\001\002" +
+    "\000\004\010\011\001\002\000\004\013\032\001\002\000" +
+    "\004\012\ufff6\001\002\000\004\010\011\001\002\000\012" +
+    "\004\ufffb\005\ufffb\006\ufffb\013\ufffb\001\002\000\004\002" +
     "\001\001\002" });
 
   /** Access to parse-action table. */
@@ -53,12 +64,16 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\015\000\006\002\004\003\005\001\001\000\002\001" +
-    "\001\000\002\001\001\000\004\004\010\001\001\000\002" +
-    "\001\001\000\002\001\001\000\004\003\011\001\001\000" +
-    "\004\004\012\001\001\000\002\001\001\000\002\001\001" +
-    "\000\004\004\015\001\001\000\002\001\001\000\002\001" +
-    "\001" });
+    "\000\033\000\006\002\005\003\006\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\004\004\011" +
+    "\001\001\000\002\001\001\000\002\001\001\000\004\003" +
+    "\012\001\001\000\002\001\001\000\004\003\015\001\001" +
+    "\000\002\001\001\000\004\005\017\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\004\004\030\001\001" +
+    "\000\002\001\001\000\002\001\001\000\004\004\033\001" +
+    "\001\000\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -135,7 +150,7 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 1: // query ::= reservadas lista_campos reservadas lista_campos PUNTO_COMA 
+          case 1: // query ::= reservadas lista_campos reservadas CAMPO PUNTO_COMA 
             {
               Object RESULT =null;
 
@@ -144,7 +159,16 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 2: // reservadas ::= FROM 
+          case 2: // query ::= reservadas lista_campos reservadas CAMPO reservadas condicion PUNTO_COMA 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("query",0, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 3: // reservadas ::= FROM 
             {
               Object RESULT =null;
 
@@ -153,7 +177,7 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // reservadas ::= SELECT 
+          case 4: // reservadas ::= SELECT 
             {
               Object RESULT =null;
 
@@ -162,7 +186,16 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // lista_campos ::= CAMPO COMA lista_campos 
+          case 5: // reservadas ::= WHERE 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("reservadas",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 6: // lista_campos ::= CAMPO COMA lista_campos 
             {
               Object RESULT =null;
 
@@ -171,11 +204,47 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // lista_campos ::= CAMPO 
+          case 7: // lista_campos ::= CAMPO 
             {
               Object RESULT =null;
 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("lista_campos",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 8: // condicion ::= CAMPO MAYOR NUMERO 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("condicion",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 9: // condicion ::= CAMPO MENOR NUMERO 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("condicion",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 10: // condicion ::= CAMPO IGUAL NUMERO 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("condicion",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 11: // condicion ::= CAMPO IGUAL COMILLA lista_campos COMILLA 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("condicion",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 

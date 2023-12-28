@@ -1,1 +1,1 @@
-elegir * de libros;
+elegir titulo, paginas, autor de libros;

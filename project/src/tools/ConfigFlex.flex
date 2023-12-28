@@ -22,6 +22,7 @@ import java_cup.runtime.*;
 /* Algunas definiciones para nuestro lenguaje */
 espacios = \r | \n | \r\n | \t | \f
 campos = [A-Za-z]+
+numeros = [0-9]+
 
 %%
 
@@ -37,6 +38,12 @@ campos = [A-Za-z]+
             return new Symbol(sym.SELECT);
             }
 
+[Pp] [Aa] [Rr] [Aa] {
+            System.out.print("WHERE");
+            nexo("WHERE ");
+            return new Symbol(sym.WHERE);
+            }
+
 "," { 
             System.out.print(", ");
             nexo(", ");
@@ -49,12 +56,42 @@ campos = [A-Za-z]+
             return new Symbol(sym.CAMPO);
             }
 
+{numeros} | "*" { 
+            System.out.print(yytext());
+            nexo(yytext() + " ");
+            return new Symbol(sym.NUMERO);
+            }
+
 ";" { 
             System.out.print(";");
             nexo("; ");
             return new Symbol(sym.PUNTO_COMA);
             }
-    
+
+"\"" { 
+            System.out.print("\"");
+            nexo("\"");
+            return new Symbol(sym.COMILLA);
+            }
+
+">" { 
+            System.out.print(">");
+            nexo(">");
+            return new Symbol(sym.MAYOR);
+            }
+
+"<" { 
+            System.out.print("<");
+            nexo("<");
+            return new Symbol(sym.MENOR);
+            }
+
+"=" { 
+            System.out.print("=");
+            nexo("=");
+            return new Symbol(sym.IGUAL);
+            }
+
 {espacios} {/*Ignore*/}
 "//".* {/*Ignore*/}
 . { System.out.print(yytext()); }

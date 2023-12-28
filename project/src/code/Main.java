@@ -164,7 +164,7 @@ public class Main extends JFrame {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            mostrarResultados(e);
         }
     }
 
@@ -187,6 +187,10 @@ public class Main extends JFrame {
 
         // Actualizar el área de texto de salida
         areaOutput.setText(query + "\n\n" + outputText.toString());
+    }
+
+    private void mostrarResultados(SQLException error) {
+        areaOutput.setText("Error en acceso a base de datos SQL.\n" + error.getMessage() + "\n\n--> Por favor, revise los datos de su consulta\n");
     }
 
     public static void main(String[] args) {
